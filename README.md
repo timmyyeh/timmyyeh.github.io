@@ -2,7 +2,8 @@
 Creating Web in 180 Days<br>
 Inspired By Jennifer Dewalt!<br>
 Here's the Website of her Project https://jenniferdewalt.com/<br>
-The First 30 days I will just create the same stuffs on her website.<br>
-After the 30 days, I will be more creative and using more React, PHP, and even MySQL to pratice more latest stuffs.<br>
+Using some front end tools to build the website in order to practice the skills. <br>
+Website will be using AJAX, JSON, JQuery, ES6 all these kinds of latest skills.
+Later on I will practice more on React, and then using NodeJS to create a back-end stuffs(Includes MongoDB).
 
 
