@@ -1,0 +1,31 @@
+:root {
+    --base: black;
+    --spacing: 10px;
+    --blur: 10px;
+}
+img {
+    padding: var(--spacing);
+    width:700px;
+    height: 500px;
+    border-radius: 25%;
+    background-color: var(--base);
+    filter: blur(var(--blur));
+}
+
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+header {
+    width: 100%;
+    border-bottom: 5px solid blanchedalmond;
+}
+
+a {
+    color: #b3f0ff;
+    text-decoration: none;
+}

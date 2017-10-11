@@ -1,0 +1,67 @@
+body {
+	background-color: orange;
+
+}
+
+#timmer_area {
+	margin-top: 50px;
+	text-align: center;
+	color: white;
+}
+#timmer {
+	font-size: 25px;
+}
+
+#color_area {
+	margin-top: 200px; 
+	text-align: center;
+	color: white;
+}
+
+footer {
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: 0;
+
+}
+
+#link {
+	width: 700px;
+	margin: 0 auto;
+	text-align: center;
+	font-size: 18px;
+	background-color: rgba(0,0,0,0.5);
+	padding: 20px 20px;
+	border-radius: 20px 20px 0 0;
+}
+
+a {
+	color: white;
+	text-decoration: none;
+	cursor: pointer;
+}
+/*.animate {
+    height: 200px;
+    width: 400px;
+    border: 1px solid #000;
+    -webkit-animation: animate_bg 5s;
+    animation: animate_bg 5s;
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+}
+
+@keyframes animate_bg {
+    0%   {background:red;}
+    50%  {background:green;}
+    100% {background:blue;}
+}
+
+@-webkit-keyframes animate_bg {
+    0%   {background:red;}
+    50%  {background:green;}
+    100% {background:blue;}
+}
+#clear {
+	clear: both;
+}*/

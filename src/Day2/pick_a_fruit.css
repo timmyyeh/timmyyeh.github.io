@@ -1,0 +1,34 @@
+
+#main_header {
+	text-align: center;
+	color: white;
+}
+body {
+	background-color: black;
+
+}
+
+#apple {
+	height: 150px;
+	width: 150px;
+
+}
+
+#orange{
+	height: 150px;
+	width: 150px;
+	
+}
+
+.fruit_container {
+	text-align: center;
+}
+
+.fruit{
+	display: inline-block;
+	margin-top: 150px;
+}
+
+#back_to_homepage {
+	text-align: center;
+}

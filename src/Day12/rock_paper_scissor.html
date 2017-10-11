@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script
+  	src="https://code.jquery.com/jquery-3.2.1.min.js"
+  	integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  	crossorigin="anonymous"></script>
+	<script
+  	src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"
+  	integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU="
+  	crossorigin="anonymous"></script>
+  <link rel="stylesheet" type="text/css" href="rock_paper_scissor.css">
+  <script type="text/javascript" src="rock_paper_scissor.js"></script>
+	<title>Rock Paper Scissors</title>
+</head>
+<body>
+	<div id="main">
+		<div id="top">
+			<div id="left">Computer</div>
+			<div id="right">You</div>
+		</div>
+		<div id="middle">
+			<div id="left_mid" class="shake">
+				<img class="currentLeft" src="../img/left_fist.png" >
+				<img src="../img/rock.png" style="display:none">
+		        <img src="../img/paper.png" style="display:none">
+		        <img src="../img/scissors.png" style="display:none">
+			</div>
+			<div id="mid_mid">
+				Choose Your Weapon
+			</div>
+			<div id="right_mid" class="shake">
+				<img  class="currentRight" src="../img/right_fist.png">
+		        <img class="rockRight" src="../img/rock.png" style="display:none">
+		        <img class="papperRight" src="../img/paper.png" style="display:none">
+		        <img class="scissorRight" src="../img/scissors.png" style="display:none">
+			</div>
+			
+		</div>
+		<div class="btn">
+			<div class="button clickable" id="rock">rock</div>
+	        <div class="button clickable" id="paper">paper</div>
+	        <div class="button clickable" id="scissors">scissors</div>
+		</div>
+	</div>
+	<footer>
+		<div id="footer">
+			<a href="../Day1/index.html">Home</a>
+		</div>
+	</footer>
+</body>
+</html>

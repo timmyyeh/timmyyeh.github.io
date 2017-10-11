@@ -1,0 +1,53 @@
+html {
+	animation-name: background_color;
+	animation-duration: 40s;
+	animation-iteration-count: infinite;
+}
+body{
+	font-family: 'Bellefair', serif;
+
+}
+header {
+	display: flex;
+	border-bottom: 2px solid #ccc;
+	justify-content: center;
+	align-items: center;
+}
+
+#mail_container{
+	padding: 20px;
+	position: absolute;
+	right: 0;
+	top: 0;
+}
+
+#mail {
+	text-decoration: none;
+	color: #333333;
+}
+
+
+
+#first_body {
+	text-align: center;
+	color: #333333;
+	font-size: 35px;
+}
+
+.days {
+	font-size: 25px;
+}
+
+.link {
+	margin-left: 25px;
+	text-decoration: none;
+	color: grey;
+}
+
+@keyframes background_color {
+	0%   {background-color:#e55c44; }
+    25%  {background-color:#9ce543; }
+    50%  {background-color:#3aaefc; }
+    75%  {background-color:#b839fc; }
+    100% {background-color:#c3dbbc; }
+}

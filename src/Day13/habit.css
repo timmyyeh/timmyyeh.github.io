@@ -1,0 +1,50 @@
+body {
+	width: 100%;
+	letter-spacing: 3px;
+	text-align: center;
+}
+#text_container {
+	height: 250px;
+	margin-top: 100px;
+}
+
+#bad_habit {
+	height: 30px;
+	width:250px;
+	vertical-align: middle;
+	/*padding: 3px;*/
+	/*margin-right: 5px;*/
+
+}
+#submit_btn {
+	height: 38px;
+	width: 100px;
+	padding: 0;
+	font-size: 16px;
+	color: #f6f6e8;
+	background-color: #d11250;
+	letter-spacing: 1px; 
+	cursor: pointer;
+	vertical-align: middle;
+
+}
+
+footer {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+
+
+}
+
+#link {
+	height: 30px;
+	background-color: grey;
+}
+a {
+	text-decoration: none;
+	color: #dbdddd
+
+
+}

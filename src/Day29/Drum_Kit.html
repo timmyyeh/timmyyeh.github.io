@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="Drum_Kit.css" type="text/css">
+    <script
+            src="https://code.jquery.com/jquery-3.2.1.min.js"
+            integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+            crossorigin="anonymous">
+    </script>
+    <meta charset="UTF-8">
+    <title>Drum Kit</title>
+
+</head>
+<body>
+    <header>
+        <a href="Drum_Kit.html">Drum Kit</a>
+        <a href="../Day1/index.html">Home</a>
+    </header>
+    <div class="keys">
+        <div data-key="65" class="key">
+            <kbd>A</kbd>
+            <span class="sound">clap</span>
+        </div>
+        <div data-key="83" class="key">
+            <kbd>S</kbd>
+            <span class="sound">hihat</span>
+        </div>
+        <div data-key="68" class="key">
+            <kbd>D</kbd>
+            <span class="sound">kick</span>
+        </div>
+        <div data-key="70" class="key">
+            <kbd>F</kbd>
+            <span class="sound">openhat</span>
+        </div>
+        <div data-key="71" class="key">
+            <kbd>G</kbd>
+            <span class="sound">boom</span>
+        </div>
+        <div data-key="72" class="key">
+            <kbd>H</kbd>
+            <span class="sound">ride</span>
+        </div>
+        <div data-key="74" class="key">
+            <kbd>J</kbd>
+            <span class="sound">snare</span>
+        </div>
+        <div id="i" data-key="75" class="key">
+            <kbd>K</kbd>
+            <span class="sound">tom</span>
+        </div>
+        <div data-key="76" class="key">
+            <kbd>L</kbd>
+            <span class="sound">tink</span>
+        </div>
+    </div>
+    <audio class="audio65" data-key="65" src="../sounds/clap.wav"></audio>
+    <audio class="audio83" data-key="83" src="../sounds/hihat.wav"></audio>
+    <audio class="audio68" data-key="68" src="../sounds/kick.wav"></audio>
+    <audio class="audio70" data-key="70" src="../sounds/openhat.wav"></audio>
+    <audio class="audio71" data-key="71" src="../sounds/boom.wav"></audio>
+    <audio class="audio72" data-key="72" src="../sounds/ride.wav"></audio>
+    <audio class="audio74" data-key="74" src="../sounds/snare.wav"></audio>
+    <audio class="audio75" data-key="75" src="../sounds/tom.wav"></audio>
+    <audio class="audio76" data-key="76" src="../sounds/tink.wav"></audio>
+    <script>
+        function removeTransition(e) {
+            if (e.propertyName !== 'transform') return;
+            e.target.classList.remove('playing');
+        }
+        const keys = Array.from(document.querySelectorAll('.key'));
+        keys.forEach(key => key.addEventListener('transitionend', removeTransition));
+
+        $(function () {
+            $(document).keydown((e) => {
+                $(`div [data-key="${e.keyCode}"]`).addClass('playing');
+                var selected = $(`.audio${e.keyCode}`);
+                selected[0].currentTime = 0;
+               selected[0].play();
+            });
+
+        });
+    </script>
+
+
+</body>
+</html>

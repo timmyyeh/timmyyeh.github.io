@@ -1,0 +1,16 @@
+header {
+	height: 25px;
+	letter-spacing: 3px;
+	border-bottom: 1px solid green;
+	padding: 5px;
+}
+a {
+	display: flex;
+	/*justify-content: center;*/
+	align-items: center; 
+	color: blue;
+	text-decoration: none;
+}
+#container{
+	margin: 120px 0;
+}

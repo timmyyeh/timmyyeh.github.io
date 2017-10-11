@@ -1,0 +1,45 @@
+body {
+	background-color: #eaf7cf;
+}
+
+#header {
+	position: absolute;
+	top: 20px;
+	right: 20px;
+}
+a {
+	text-decoration: none;
+	font-size: 18px;
+	letter-spacing: 2px;
+	color: #605f83;
+}
+
+a:hover {
+	color: #5f8360;
+}
+
+#info {
+	font-size: 50px;
+	letter-spacing: 2px;
+	font-family: 'Codystar';
+	margin-top: 180px;
+	margin-left: 50px;
+}
+
+.message {
+	padding: 30px 30px 30px 50px;
+	font-family: Monaco, Consolas, "Lucida Console", monospace;
+	font-size: 28px;
+	color: #333;
+	width: 680px;
+}
+#top_container {
+	position: fixed;
+	top: 200px;
+}
+#bottom_container {
+	position: absolute;
+	top: 2500px;
+	height: 2000px;
+	/*width: 100%*/
+}

@@ -1,0 +1,30 @@
+body {
+	height: 100%;
+	background-color: #101010;
+}
+
+#main {
+	/*border:1px solid white;*/
+	width: 918px;
+	margin: 0 auto;
+}
+
+.box {
+	position: relative;
+	float: left;
+	height: 100px;
+	width: 100px;
+	background-color: #444;
+	z-index: 1;
+}
+
+a {
+	font-size: 28px;
+	letter-spacing: 2px;
+	background-color: white;
+	text-decoration: none;
+	box-shadow: -3px 3px 0 grey;
+}
+/*.clear {
+  clear: both;
+}*/

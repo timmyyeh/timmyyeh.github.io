@@ -1,0 +1,14 @@
+header {
+	height: 25px;
+	border-bottom: 1px solid black;
+}
+a {
+	display: flex;
+	align-items: center;
+	color: grey;
+	text-decoration: none;
+}
+
+#container {
+	margin-top: 50px;
+}

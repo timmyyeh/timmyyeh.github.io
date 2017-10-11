@@ -1,0 +1,21 @@
+#main_container {
+
+	margin-top: 50px;
+	text-align: center;
+	font-family: 'Indie Flower', cursive;
+
+}
+h1 {
+	animation: color;
+	animation-duration: 5s;
+	animation-iteration-count: infinite;
+}
+
+@keyframes color {
+	0%   {color:#e55c44; }
+    25%  {color:#9ce543; }
+    50%  {color:#3aaefc; }
+    75%  {color:#b839fc; }
+    100% {color:#c3dbbc; }
+
+}

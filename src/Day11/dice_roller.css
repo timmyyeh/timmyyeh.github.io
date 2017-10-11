@@ -1,0 +1,138 @@
+body {
+	background: #F5F5DC;
+	text-align: center;
+	font-family: "Arial Black", "Arial Bold", Gadget, sans-serif;
+	letter-spacing: 2px;
+	color: #1d113b;
+	/*overflow: scroll;*/
+}
+#title {
+	width: 800px;
+	padding: 50px 0 50px;
+	margin: 0 auto;
+	text-shadow: 5px 5px 5px grey;
+}
+
+.shake {
+	-webkit-animation: shake 1s;
+	-moz-animation: shake 1s;
+	-ms-animation: shake 1s;
+	animation: shake 1s;
+}
+
+.button {
+	width: 200px;
+	margin: 50px auto;
+	font-size: 24px;
+	background-color: #42f4b3;
+	cursor: pointer;
+	border-radius: 10px;
+	box-shadow: 3px 3px 0 black;
+}
+.die_face {
+	position: relative;
+	display: inline-block;
+	height: 150px;
+	width: 150px;
+	background: #3300cc;
+	/*margin: 50px 20px;*/
+	border-radius: 5px;
+
+	box-shadow: 1px 1px 3px rgba(0,0,0,0.2) inset, 
+				-1px -1px 3px rgba(0,0,0,0.2) inset,
+				-1px -1px 0 rgba(255,255,255,0.2);
+
+}
+.pip {
+	position: absolute;
+	height: 33px;
+	width: 33px;
+	margin: 9px;
+	border-radius: 50%;
+	box-shadow: 1px 1px 0 rgba(0,0,0,0.7) inset, 
+				1px 1px 0 rgba(255,255,255,0.5);
+
+	background-color: #fff;
+	background: -webkit-gradient(radial, center center, 0, center center, 460, from(#fff), to(#c1bec9));
+	background: -webkit-radial-gradient(circle, #fff, #c1bec9);
+	background: -moz-radial-gradient(circle, #fff, #c1bec9);
+  	background: -ms-radial-gradient(circle, #fff, #c1bec9);
+}
+.pip_1 {
+	top: 3px;
+	left: 3px;
+}
+.pip_2 {
+	top: 50px;
+	left: 3px;
+}
+
+.pip_3 {
+	top: 97px;
+	left: 3px;
+}
+
+.pip_4 {
+	top: 50px;
+	left: 50px;
+}
+
+.pip_5 {
+	top: 3px;
+	right: 3px;
+}
+
+.pip_6 {
+	right: 3px;
+	top: 50px;
+}
+
+.pip_7{
+	right: 3px;
+	top: 97px;
+}
+footer {
+	position: absolute;
+	bottom: 5px;
+	left: 0;	
+	right: 0;
+	height: 34px;
+	background-color: #fe2f44;
+	border-top: 1px solid #fe162d;
+}
+a {
+	color: #F5F5DC;
+	/*margin: 10px;*/
+	text-decoration: none;
+}
+@-webkit-keyframes shake {
+	0%, 100% {-webkit-transform: translateX(0);} 
+	5%, 15%, 25%, 35%, 45%, 55%, 65%, 75%, 85%, 95% {-webkit-transform: translateX(5px);} 
+	10%, 20%, 30%, 40%, 50%, 60%, 70%, 80%, 90% {-webkit-transform: translateX(-5px);} 
+}
+
+@-moz-keyframes shake {
+	0%, 100% {-moz-transform: translateX(0);} 
+	5%, 15%, 25%, 35%, 45%, 55%, 65%, 75%, 85%, 95% {-moz-transform: translateX(5px);} 
+	10%, 20%, 30%, 40%, 50%, 60%, 70%, 80%, 90% {-moz-transform: translateX(-5px);} 
+}
+
+@-o-keyframes shake {
+	0%, 100% {-o-transform: translateX(0);} 
+	5%, 15%, 25%, 35%, 45%, 55%, 65%, 75%, 85%, 95% {-o-transform: translateX(5px);} 
+	10%, 20%, 30%, 40%, 50%, 60%, 70%, 80%, 90% {-o-transform: translateX(-5px);} 
+}
+
+@-ms-keyframes shake {
+	0%, 100% {-ms-transform: translateX(0);} 
+	5%, 15%, 25%, 35%, 45%, 55%, 65%, 75%, 85%, 95% {-ms-transform: translateX(5px);} 
+	10%, 20%, 30%, 40%, 50%, 60%, 70%, 80%, 90% {-ms-transform: translateX(-5px);} 
+}
+
+@keyframes shake {
+	0%, 100% {transform: translateX(0);} 
+	5%, 15%, 25%, 35%, 45%, 55%, 65%, 75%, 85%, 95% {transform: translateX(5px);} 
+	10%, 20%, 30%, 40%, 50%, 60%, 70%, 80%, 90% {transform: translateX(-5px);} 
+}
+
+

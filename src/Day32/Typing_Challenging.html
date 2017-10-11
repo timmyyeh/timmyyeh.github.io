@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Typing Challenge</title>
+    <style>
+        body {
+            letter-spacing: 2px;
+            text-align: center;
+            background-color: #fafafa;
+        }
+        .wrapper{
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-gap: 100px;
+        }
+
+        header{
+            justify-self: start;
+        }
+        a{
+            font-size:25px;
+            text-decoration: none;
+            color: #5f7ffd;
+        }
+        .middle_container{
+            background-image: url('http://www.fourseasons.com/alt/img-opt/publish/content/dam/fourseasons/images/web/NYF/NYF_395_aspect16x9.jpg/80.jpg');
+            background-size: 500px;
+            height: 500px;
+            border: 1px solid black;
+            padding:20px;
+            margin: 10px;
+        }
+
+    </style>
+</head>
+<body>
+<div class="wrapper">
+    <header><a href="../Day1/index.html" class="color">Home</a></header>
+    <div class="middle_container">
+        <span class="color">Enter: </span><input type="text" class="input" placeholder="Please Enter Surprise"><input type="color" class="colorPicker">
+    </div>
+</div>
+
+<script>
+    const pressed = [];
+
+    function checkWord(e){
+        const target = "surprise";
+        pressed.push(e.key);
+
+        pressed.splice(-target.length - 1, pressed.length - target.length);
+        console.log(pressed);
+        if(pressed.join('').includes(target)){
+            alert("correct!!!")
+        }
+
+
+    }
+    const color = document.querySelector('.colorPicker');
+    const a = document.querySelector('.input');
+
+    a.addEventListener('keyup', checkWord);
+    color.addEventListener('change', function(e){
+        const title = document.querySelectorAll('.color');
+        title.forEach((e) => e.style.color=`${this.value}`);
+
+    });
+</script>
+
+</body>
+
+</html>

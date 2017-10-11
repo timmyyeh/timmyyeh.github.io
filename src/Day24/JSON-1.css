@@ -1,0 +1,23 @@
+body {
+	letter-spacing: 3px;
+	text-align: center;
+}
+header {
+ 	font-family: "Courier New", Courier, "Lucida Sans Typewriter", "Lucida Typewriter", monospace;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	height: 20px;
+	text-align: right;
+	border-bottom: 5px solid grey;
+	padding: 10px;
+
+}
+a{	
+	color: black;
+	text-decoration: none;
+}
+#container {
+	margin: 150px 50px;
+}

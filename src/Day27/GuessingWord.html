@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link type="text/css" rel="stylesheet" href="GuessingWord.css">
+    <script
+            src="https://code.jquery.com/jquery-3.2.1.min.js"
+            integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+            crossorigin="anonymous">
+    </script>
+    <script type="text/javascript" src="GuessingWord.js"></script>
+	<title>Guessing Word</title>
+</head>
+<body>
+	<header>
+        <a id="head" href="GuessingWord.html">Guessing</a>
+        <a  id="link" href="../Day1/index.html">Home</a>
+	</header>
+    <div id="container">
+        <div id="text">
+            <h4>You have three chances to unscramble the word.<br>
+                If you succeed, you get a point.<br>
+                If you fail, you lose a point.
+            </h4>
+        </div>
+        <button id="btn_1">Let's Play!</button>
+
+
+        <div id="game">
+            <div id="word"></div>
+            <form>
+                <input id="guess" type="text" placeholder="Enter your guess" autocomplete="off">
+                <input class="button" type="submit" value="Submit" autocomplete="off">
+            </form>
+        </div>
+    </div>
+</body>
+</html>
