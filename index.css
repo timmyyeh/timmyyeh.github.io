@@ -45,9 +45,9 @@ header {
 }
 
 @keyframes background_color {
-	0%   {background-color:#e55c44; }
-    25%  {background-color:#9ce543; }
-    50%  {background-color:#3aaefc; }
-    75%  {background-color:#b839fc; }
-    100% {background-color:#c3dbbc; }
+	0%   {background-color:white; }
+    25%  {background-color:gray; }
+    50%  {background-color: #07abff; }
+    75%  {background-color: #c5f02b; }
+    100% {background-color: #edffef; }
 }
