@@ -5,33 +5,48 @@ html {
 }
 body{
 	font-family: 'Bellefair', serif;
+	width: 100%;
 
 }
 header {
-	display: flex;
-	border-bottom: 2px solid #ccc;
-	justify-content: center;
-	align-items: center;
-}
-
-#mail_container{
-	padding: 20px;
-	position: absolute;
-	right: 0;
+	position: fixed;
 	top: 0;
+	left: 0;
+	width: 100%;
 }
 
-#mail {
+header > ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	background-color: #333333;
+}
+
+header>ul>li {
+	float: left;
+
+}
+
+li a {
+	display: block;
+	color: white;
+	font-size: 20px;
+	text-align: center;
+	padding: 14px 16px;
 	text-decoration: none;
-	color: #333333;
 }
 
+li a:hover {
+	background-color: #111;
+}
 
 
 #first_body {
 	text-align: center;
 	color: #333333;
 	font-size: 35px;
+	margin-top: 60px;
 }
 
 .days {
@@ -44,10 +59,12 @@ header {
 	color: grey;
 }
 
-@keyframes background_color {
-	0%   {background-color:white; }
-    25%  {background-color:gray; }
-    50%  {background-color: #07abff; }
-    75%  {background-color: #216da4; }
-    100% {background-color: #edffef; }
+.active {
+	background-color: #4caf50;
 }
+
+.days a:hover {
+	color: aqua;
+}
+
+
