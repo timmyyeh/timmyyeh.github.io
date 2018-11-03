@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,302 +8,215 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
 </head>
+
 <body>
-    <h1 id="chapter2">Chapter 2</h1>
 
-<h3 id="ch21">Ch 2.1</h3>
+    <h1 id="classnote">Class Note </h1>
 
-<ul>
-<li>wave length <br />
-<code>speedOfLight / Frequency</code></li>
-</ul>
+    <ul>
+        <li>Centralize: use scheduler to pick who gets to transmit and when
+            <br>Positives: Scales well, efficient
+            <br>Disadvantages:</li>
 
-<h3 id="ch22">Ch 2.2</h3>
+        <li>Distributed: let participants to figure it out throught some mechanism
+            <br>Positives:
+            <br>Disadvantages:</li>
 
-<ul>
-<li>NRZ (none-retruen to zero): <br />
-1->high signal <br />
-0->low signal <br />
-Disadvantages: unable to clock</li>
+        <li>CSMA (Listen before sending)</li>
 
-<li>baud rate: the rate at which signal changes back to original point</li>
+        <li>WIFI cant hear while sending (No collision detection)</li>
 
-<li>bits stuffing: every consecutive 1s insert 0 after it</li>
+        <li>Hidden Termianl: A B C (a is sending to b and c is sending to b since a cannot hear c and c cannot hear a)</li>
 
-<li>4B/5B: insert extra bitx into bit stream to avoid consecutive 1's and 0's. Every 4 bits of data are encoded in 5 bits (no more than one leading 0 and no more than 2 trailing 0s). Then, use NRZI (inverse) to send data.</li>
-</ul>
+        <li>Exposed Terminal: A &lt;- B C -> D </li>
 
-<h3 id="ch24errordetection">Ch 2.4 Error Detection</h3>
+        <li>MACA: broadcast a signal(CTS/RTS) to neighbors to tell them I am goinng to send a message <br />
+            <code>CTS: clear to send, RTS: request to send</code></li>
 
-<ul>
-<li>Two-Dimensonal Parity: 基偶同位(set parity to 1 if there's odd nums of 1s)</li>
+        <li>Use binary exponetial everytime whenever there's a collision</li>
 
-<li>Internet Checksum: add up all the words (both receiver and sender will perform the calculation)</li>
+        <li>LTE(Long Term Evolution): protocal for 3.9G not real 4G</li>
+    </ul>
 
-<li>Cyclic redundancy check (CRC) <br />
-use some rerundancy k bits to detect error where k &lt;&lt; n
-<code>
-Message: 10011010 -&gt; x^7+x^4+x^3+x   (M(x))
-C(x): given with k degree
-Then the sender will send n+1+k bits called P(x) which is divisible by C(x). We can obtain the remainder by XOR any poly B(x) with C(x)
-</code>
-<code>1. Multiply M(x) by x^k; add k zero at the end of the message to obtain T(x)</code> <br />
-<code>2. Divide T(x) by C(x) to find remainder</code> <br />
-<code>3. subtract remainder from T(x) (XOR)</code></li>
-</ul>
+    <h2 id="gsmglobalsystemformobilecommunication2g">* GSM(Global System for Mobile Communication): 2G </h2>
 
-<h3 id="ch25">Ch 2.5</h3>
+    <hr />
 
-<ul>
-<li><p>Automatic repeat request (ARQ)</p>
+    <h1 id="linklayerframes">Link Layer: (Frames)</h1>
 
-<pre><code>AKA stop and wait algorithm: After transmitting one frame, the sender waits for an acknowledgemnet before transmitting next frame
-</code></pre></li>
+    <p>Framing, Error detection and correction, Retranmissions, multiple access, switching</p>
 
-<li><p>Sliding window Algorithm  </p>
+    <ul>
+        <li>Byte Count: Count byte length for each frame</li>
 
-<pre><code>send window size (SWS)
-last acknowledgment received (LAR)
-last frame sent (LFS)
-Invariant:
-    LFS - LAR &lt;= SWS
-</code></pre>
+        <li>Byte Stuffing: inset flag byte</li>
 
-<pre><code>Receiver:
-receive window size (RWS)
-largest acceptable frame (LAF)
-last frame received (LFR)
-Invariant:
-    LAF - LFR &lt;= RWS
-If SeqNum &lt;= LFR || SeqNum &gt; LAF -&gt; the frame is outside receiver's window
-If LFR &lt; SeqNum &lt;= LAF -&gt; within the window
+        <li>Bit stuffing: after five 1s, insert 0</li>
 
--------------------------------------------------
-RWS = 1: receiver will not buffer any frames that arrive out of order
+        <li>PPP (Point to Point Protocol)</li>
+    </ul>
 
-RWS = SWS: buffer any frames from sender
-</code></pre>
+    <h2 id="multipleaccess">Multiple Access</h2>
 
-<p><code>Selective acknowledgment: send Ack when frame arrived in any order</code></p></li>
-</ul>
+    <ul>
+        <li>Time Division Multiplexing (take turns on a fixed schedule)</li>
 
-<h3 id="ch26">Ch 2.6</h3>
+        <li>Frequency Division Multiplexing (user uses different frequency)</li>
+    </ul>
 
-<ul>
-<li>promiscuous mode: delivers all received frames to the host</li>
+    <h3 id="multupleaccessalgo">multuple access algo:</h3>
 
-<li>all 1s in ethernet address is a broadcast address</li>
+    <p>|Type|usage|Positives|Negatives|Examples|
+        |---|---|---|---|---|
+        |Centralized|Use scheduler|Scales Well, efficient|Require management|Cellular networks|
+        |Distributed|figure it our through mechanism|good under low load|Scaling</p>
 
-<li>1 at first and not all 1s is called multicast address (sending messages to subset of hosts)</li>
-</ul>
+    <h3 id="encapsulation">Encapsulation</h3>
 
-<hr />
+    <p>|Layer|Control|Data|
+        |---|---|---|
+        |Network||↓
+        |Link|Spanning Tree|Ethernet Frame|
+        |Physical||Eletrical signals</p>
 
-<h1 id="classnote">Class Note  </h1>
+    <h2 id="">---</h2>
 
-<ul>
-<li>Centralize: use scheduler to pick who gets to transmit and when
-<br>Positives: Scales well, efficient
-<br>Disadvantages:</li>
+    <h1 id="networklayer">Network Layer</h1>
 
-<li>Distributed: let participants to figure it out throught some mechanism
-<br>Positives:
-<br>Disadvantages:</li>
+    <ul>
+        <li>Shortcoming of Switches: Don't scale up, Dont cross more thatn one link layer</li>
 
-<li>CSMA (Listen before sending)</li>
+        <li>Routing: the process of deciding in which direction to send </li>
 
-<li>WIFI cant hear while sending (No collision detection)</li>
+        <li>Forwarding: the process of sending packet</li>
+    </ul>
 
-<li>Hidden Termianl: A B C (a is sending to b and c is sending to b since a cannot hear c and c cannot hear a)</li>
+    <h3 id="networkingservices">Networking Services</h3>
 
-<li>Exposed Terminal: A &lt;- B C -> D </li>
+    <ul>
+        <li>Datagrams: connectionless Ex: postal letters, IP <br />
+            each packets contain a dest address</li>
 
-<li>MACA: broadcast a signal(CTS/RTS) to neighbors to tell them I am goinng to send a message <br />
-<code>CTS: clear to send, RTS: request to send</code></li>
+        <li>Connection-oriented: telephone call</li>
+    </ul>
 
-<li>Use binary exponetial everytime whenever there's a collision</li>
+    <h3 id="ipinternetprotocal">IP (Internet Protocal)</h3>
 
-<li>LTE(Long Term Evolution): protocal for 3.9G not real 4G</li>
-</ul>
+    <ul>
+        <li>Network layer of the internet, uses datagrams</li>
 
-<h2 id="gsmglobalsystemformobilecommunication2g">* GSM(Global System for Mobile Communication): 2G  </h2>
+        <li>IPv4 carries 32 bit addresses</li>
+    </ul>
 
-<hr />
+    <h3 id="virtualcircuitmodelnobandwidthneedbereserved">Virtual Circuit Model (No bandwidth need be reserved)</h3>
 
-<h1 id="linklayerframes">Link Layer: (Frames)</h1>
+    <ul>
+        <li>Three phases <br />
+            1.Connection establishment </li>
+    </ul>
 
-<p>Framing, Error detection and correction, Retranmissions, multiple access, switching</p>
+    <ol>
+        <li>Data transfer </li>
 
-<ul>
-<li>Byte Count: Count byte length for each frame</li>
+        <li>Connection teardown</li>
+    </ol>
 
-<li>Byte Stuffing: inset flag byte</li>
+    <ul>
+        <li>MPLS (Multi-protocal label switching):
+            packet carries short label</li>
+    </ul>
 
-<li>Bit stuffing: after five 1s, insert 0</li>
+    <h3 id="internetworking">Internetworking</h3>
 
-<li>PPP (Point to Point Protocol)</li>
-</ul>
+    <ul>
+        <li>only one protocal for IP</li>
 
-<h2 id="multipleaccess">Multiple Access</h2>
+        <li>IPv4 <br />
+            uses 32 bit addresses <br />
+            written in dotted quad (8 bits followed by dots)</li>
 
-<ul>
-<li>Time Division Multiplexing (take turns on a fixed schedule)</li>
+        <li>IP Prefixes: where address located (first L bit) <br />
+            Written in IP address/length <br />
+            where address is the lowest address in the prefix and length is prefix bits</li>
 
-<li>Frequency Division Multiplexing (user uses different frequency)</li>
-</ul>
+        <li>Host Networking </li>
+    </ul>
 
-<h3 id="multupleaccessalgo">multuple access algo:</h3>
+    <ol>
+        <li>IP address</li>
 
-<p>|Type|usage|Positives|Negatives|Examples|
-|---|---|---|---|---|
-|Centralized|Use scheduler|Scales Well, efficient|Require management|Cellular networks|
-|Distributed|figure it our through mechanism|good under low load|Scaling</p>
+        <li>Subnet Mask (Local address) </li>
 
-<h3 id="encapsulation">Encapsulation</h3>
+        <li>Gateway (routing)</li>
 
-<p>|Layer|Control|Data|
-|---|---|---|
-|Network||↓
-|Link|Spanning Tree|Ethernet Frame|
-|Physical||Eletrical signals</p>
+        <li>DNS Server </li>
+    </ol>
 
-<h2 id="">---</h2>
+    <ul>
+        <li>IPv6 <br />
+            uses 128 bits <br />
+            with Stateless Autoconfiguration (SLAAC)
+            Process: with broadcast message, get prefix form router, attach mac to router Prefix.</li>
+    </ul>
 
-<h1 id="networklayer">Network Layer</h1>
+    <h3 id="summary">Summary</h3>
 
-<ul>
-<li>Shortcoming of Switches: Don't scale up, Dont cross more thatn one link layer</li>
+    <p>Bootstrapping (DHCP) -- Dynamic Host config protocal <br />
+        Finding Link Nodes (ARP) <br />
+        Really big packets (Fragmentationn) <br />
+        Errors in the network (ICMP) <br />
+        Running out of addresses (IPv6, NAT: Network address translation)</p>
 
-<li>Routing: the process of deciding in which direction to send </li>
+    <h3 id="dynamichostconfigurationprotocaldhcp">Dynamic Host Configuration protocal (DHCP)</h3>
 
-<li>Forwarding: the process of sending packet</li>
-</ul>
+    <ul>
+        <li>client-server application</li>
 
-<h3 id="networkingservices">Networking Services</h3>
+        <li>leases ip address to nodes <br />
+            <code>Before configuration, node sends broadcast messages to all nodes on the network</code></li>
+    </ul>
 
-<ul>
-<li>Datagrams: connectionless Ex: postal letters, IP <br />
-each packets contain a dest address</li>
+    <h3 id="addressresolutionprotocalarp">Address Resolution Protocal (ARP)</h3>
 
-<li>Connection-oriented: telephone call</li>
-</ul>
+    <ul>
+        <li>Node uses to map a local IP address to its link layer addresses</li>
+    </ul>
 
-<h3 id="ipinternetprotocal">IP (Internet Protocal)</h3>
+    <h3 id="internnetcontrolmessageprotocalicmp">Internnet Control Message Protocal (ICMP)</h3>
 
-<ul>
-<li>Network layer of the internet, uses datagrams</li>
+    <ul>
+        <li>companion protocal to IP</li>
 
-<li>IPv4 carries 32 bit addresses</li>
-</ul>
+        <li>Provides error report and testinng</li>
 
-<h3 id="virtualcircuitmodelnobandwidthneedbereserved">Virtual Circuit Model (No bandwidth need be reserved)</h3>
+        <li>send error when router encounters an error</li>
+    </ul>
 
-<ul>
-<li>Three phases <br />
-1.Connection establishment  </li>
-</ul>
+    <h3 id="networkaddresstranslationnat">Network Address Translation (NAT)</h3>
 
-<ol>
-<li>Data transfer  </li>
+    <ul>
+        <li>map many private IP tp one public IP</li>
+    </ul>
 
-<li>Connection teardown</li>
-</ol>
+    <p>|Layer|Protocal|
+        |---|---|
+        |7.Application|FTP,HTTP|
+        |6.Presentation|
+        |5.Session|
+        |4.Transport|TCP,UDP|
+        |3.Network| ARP,ICMP,IP|
+        |2.Link|Ethernet,MAC,PPP(Point2Point)|
+        |1.Pyhsical|DSL|</p>
 
-<ul>
-<li>MPLS (Multi-protocal label switching):
-packet carries short label</li>
-</ul>
+    <h3 id="spanningtree">Spanning Tree</h3>
 
-<h3 id="internetworking">Internetworking</h3>
+    <ol>
+        <li>Elect a root nnode of tree (lowest address)</li>
 
-<ul>
-<li>only one protocal for IP</li>
+        <li>Grow tree as shortest distance from root</li>
 
-<li>IPv4 <br />
-uses 32 bit addresses <br />
-written in dotted quad (8 bits followed by dots)</li>
-
-<li>IP Prefixes: where address located (first L bit) <br />
-Written in IP address/length <br />
-where address is the lowest address in the prefix and length is prefix bits</li>
-
-<li>Host Networking  </li>
-</ul>
-
-<ol>
-<li>IP address</li>
-
-<li>Subnet Mask (Local address)  </li>
-
-<li>Gateway (routing)</li>
-
-<li>DNS Server  </li>
-</ol>
-
-<ul>
-<li>IPv6 <br />
-uses 128 bits <br />
-with Stateless Autoconfiguration (SLAAC)
-Process: with broadcast message, get prefix form router, attach mac to router Prefix.</li>
-</ul>
-
-<h3 id="summary">Summary</h3>
-
-<p>Bootstrapping (DHCP) -- Dynamic Host config protocal <br />
-Finding Link Nodes (ARP) <br />
-Really big packets (Fragmentationn) <br />
-Errors in the network (ICMP) <br />
-Running out of addresses (IPv6, NAT: Network address translation)</p>
-
-<h3 id="dynamichostconfigurationprotocaldhcp">Dynamic Host Configuration protocal (DHCP)</h3>
-
-<ul>
-<li>client-server application</li>
-
-<li>leases ip address to nodes <br />
-<code>Before configuration, node sends broadcast messages to all nodes on the network</code></li>
-</ul>
-
-<h3 id="addressresolutionprotocalarp">Address Resolution Protocal (ARP)</h3>
-
-<ul>
-<li>Node uses to map a local IP address to its link layer addresses</li>
-</ul>
-
-<h3 id="internnetcontrolmessageprotocalicmp">Internnet Control Message Protocal (ICMP)</h3>
-
-<ul>
-<li>companion protocal to IP</li>
-
-<li>Provides error report and testinng</li>
-
-<li>send error when router encounters an error</li>
-</ul>
-
-<h3 id="networkaddresstranslationnat">Network Address Translation (NAT)</h3>
-
-<ul>
-<li>map many private IP tp one public IP</li>
-</ul>
-
-<p>|Layer|Protocal|
-|---|---|
-|7.Application|FTP,HTTP|
-|6.Presentation|
-|5.Session|
-|4.Transport|TCP,UDP|
-|3.Network| ARP,ICMP,IP|
-|2.Link|Ethernet,MAC,PPP(Point2Point)|
-|1.Pyhsical|DSL|</p>
-
-<h3 id="spanningtree">Spanning Tree</h3>
-
-<ol>
-<li>Elect a root nnode of tree (lowest address)</li>
-
-<li>Grow tree as shortest distance from root</li>
-
-<li>Turn off ports for forwarding if they aren't on the spanning tree</li>
-</ol>
+        <li>Turn off ports for forwarding if they aren't on the spanning tree</li>
+    </ol>
 </body>
+
 </html>
