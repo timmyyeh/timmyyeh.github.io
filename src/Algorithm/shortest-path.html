@@ -1,12 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Shortest Path</title>
 </head>
+
 <body>
-    
+    <h1 id="singlesourceshortestpathalgorithm">Single Source Shortest Path Algorithm</h1>
+
+    <h2 id="unweightedgraph">Unweighted Graph</h2>
+
+    <ul>
+        <li>Use BFS -> O(E+V)</li>
+
+        <li>Traverse entire graph with breadth first search and find the one that has the least edges</li>
+    </ul>
+
+    <h2 id="dijkstrasalgorithm">Dijkstra's Algorithm</h2>
+
+    <ul>
+        <li>For single-source shortest paths in a weighted graph (Directed or undirected)</li>
+    </ul>
+
+    <pre><code>1. For each node v, set v.cost = inf and v.known = false
+2. Set source.cost = 0
+3. While there are unknown nodes in G  
+    a) select unknown v with lowest cost
+    b) mark v as known
+    c) For each edge(v,u) with weight w:
+        c1 = v.cost + w
+        c2 = u.cost
+        if (c1 &lt; c2):
+            u.cost = c1
+            u.path = v
+
+Runtime: O(v^2 + E)
+</code></pre>
+
+    <ul>
+        <li>With priority queue </li>
+    </ul>
+
+    <pre><code>1. For each node v, set v.cost = inf and v.known = false, add v into Q
+2. set source.cost = 0
+3. while Q is not empty:
+    p &lt;- extract_min()
+    for each neighbot q of p:
+        cost = p.cost + w(p,q)
+        if cost &lt; q.cost:
+            q.cost = cost
+            Q.decrese_key(q)
+</code></pre>
+
+    <h3 id="runtime">Runtime</h3>
+
+    <p>|Implementation|Big O|
+        |---|---|
+        |Normal|V^2|
+        |Fib Heap|E+Vlog(V) (Fastest known single-source algorithm)|</p>
+
+    <h2 id="bellmanfordsalgorithm">Bellman-Ford's Algorithm</h2>
+
+    <ul>
+        <li>single source algorithm (works for negative weight)</li>
+    </ul>
 </body>
+
 </html>
