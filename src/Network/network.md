@@ -59,6 +59,29 @@ Disadvantages: unable to clock
 * promiscuous mode: delivers all received frames to the host
 * all 1s in ethernet address is a broadcast address
 * 1 at first and not all 1s is called multicast address (sending messages to subset of hosts)
+  
+---
+---
+
+# Chapter 3
+* Switch: mechanism that allows us to interconnect links to form a larger network
+* Switch is just forwarding packet to other nodes by using the table
+  
+## Datagram
+* contains enough information (dest address) in packet so that it can reach the dest 
+* connectionless: can send a packet anywhere at any time
+
+## Virtual Circuit
+* connecrtion-oriented model: need to set up virtual connection from source to dest before any data is sent
+* each switch contains VC table and each entry in VC table contains virtual circuit identifier (VCI)
+* outgoing vci in current switch is incomming vci for next switch
+
+## Source routing
+* place a order list of port in header (move the cur to front of list)
+
+## Bridge
+* A network bridge is a computer networking device that creates a single aggregate network from multiple communication networks or network segments.   
+  ### learning bridge: each bridge inspect the source address in all frames and record it.
 
   
 ---

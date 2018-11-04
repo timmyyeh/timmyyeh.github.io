@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>FlexBox!</title>
+</head>
+<body>
+    <!-- Just for practice purpose -->
+    <!-- Justify-content is for horizontal -->
+    <!-- align-items is for vertical -->
+    <style>
+        .header {
+            text-align: center;
+        }
+
+        .horizontal-container {
+            display: flex;
+            box-shadow: 5px 10px 8px #888888;
+            margin: 15px;
+            z-index: 10;
+            /* align-items: flex-end; */
+            /* align-items: center; */
+        }
+
+        .horizontal-container div {
+            border: 1px #ccc solid;
+            padding:10px;
+        }
+
+        .box1 {
+            flex: 1;
+            /* order: 3; */
+        }
+
+        .box2 {
+            flex: 1;
+            /* order: 2; */
+        }
+
+        .box3 {
+            flex: 1;
+            /* order: 1; */
+        }
+
+        .box1:hover {
+            background-color: aliceblue;
+            /* order: 3; */
+        }
+
+        .box2:hover {
+            background-color: rgb(32, 100, 160);
+            /* order: 2; */
+        }
+
+        .box3 {
+            flex: 1;
+            /* order: 1; */
+        }
+
+        .vertical-container {
+            margin-top: 15px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .vertical-container div {
+            border: 3px gray solid;
+            padding: 10px;
+        }
+
+        .horizontal-container-2 {
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        .horizontal-container-2 div {
+            border: 1px #ccc solid;
+            padding:10px;
+            width: 20%;
+        }
+        .top {
+            display: flex;
+            width: 100%;
+            height: 120px;
+            align-items: center;
+            justify-content: center;
+        }
+        .header {
+        }
+        .btn {
+            position:absolute;
+            right: 50px;
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+
+        .btn span {
+            cursor: pointer;
+            display: inline-block;
+            position: relative;
+            transition: 0.5s;
+        }
+
+        .btn span:after {
+            content: '\00bb';
+            position: absolute;
+            opacity: 0;
+            top:0;
+            right: -20;
+            transition: 0.5s;
+        }
+
+        .btn:hover span {
+            padding-right: 25px;
+        }
+
+        .btn:hover span:after {
+            opacity: 1;
+            right: 0;
+        }
+
+
+
+        
+
+
+    </style>
+    <div class="top">
+        <h1 class="header">Horizontal Box!!!</h1>
+        <button class="btn" type="button"> <span>Click</span> </button>
+    </div>
+    <div class="horizontal-container">
+        <div class="box1">
+            <h1>Box1</h1>
+            <p>I am box 1 lol</p><p>I am box 2 lol</p><p>I am box 2 lol</p><p>I am box 2 lol</p>
+        </div>
+        <div class="box2">
+                <h1>Box2</h1>
+                <p>I am box 2 lol</p>
+                
+        </div>
+        <div class="box3">
+                <h1>Box3</h1>
+                <p>I am box 3 lol</p>
+        </div>
+            
+    </div>
+    <div class="horizontal-container-2">
+            <div class="container-2-box">
+                <h1>Box1</h1>
+                <p>I am box 1 lol</p><p>I am box 2 lol</p><p>I am box 2 lol</p><p>I am box 2 lol</p>
+            </div>
+            <div class="container-2-box">
+                    <h1>Box2</h1>
+                    <p>I am box 2 lol</p>
+                    
+            </div>
+            <div class="container-2-box">
+                    <h1>Box3</h1>
+                    <p>I am box 3 lol</p>
+            </div>
+                
+        </div>
+
+    <div class="vertical-container">
+            <div class="box1">
+                    <h1>Box1</h1>
+                    <p>I am box 1 lol</p><p>I am box 2 lol</p><p>I am box 2 lol</p><p>I am box 2 lol</p>
+                </div>
+                <div class="box2">
+                        <h1>Box2</h1>
+                        <p>I am box 2 lol</p>
+                        
+                </div>
+                <div class="box3">
+                        <h1>Box3</h1>
+                        <p>I am box 3 lol</p>
+                </div>
+    </div>
+    <script>
+        let button = document.getElementsByClassName('btn');
+        console.log(button);
+        button[0].addEventListener('click', () => {
+            alert("..");        
+            });
+    </script>
+    
+</body>
+</html>
