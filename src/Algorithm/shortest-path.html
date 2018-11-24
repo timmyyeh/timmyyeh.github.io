@@ -5,27 +5,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="./shortest-path.css">
     <title>Shortest Path</title>
 </head>
 
 <body>
     <h1 id="singlesourceshortestpathalgorithm">Single Source Shortest Path Algorithm</h1>
 
-    <h2 id="unweightedgraph">Unweighted Graph</h2>
+    <div class="content">
 
-    <ul>
-        <li>Use BFS -> O(E+V)</li>
+        <div>
+            <h2 id="unweightedgraph">Unweighted Graph</h2>
 
-        <li>Traverse entire graph with breadth first search and find the one that has the least edges</li>
-    </ul>
+            <ul>
+                <li>Use BFS -> O(E+V)</li>
 
-    <h2 id="dijkstrasalgorithm">Dijkstra's Algorithm</h2>
+                <li>Traverse entire graph with breadth first search and find the one that has the least edges</li>
+            </ul>
+        </div>
 
-    <ul>
-        <li>For single-source shortest paths in a weighted graph (Directed or undirected)</li>
-    </ul>
+        <div>
+            <h2 id="dijkstrasalgorithm">Dijkstra's Algorithm</h2>
 
-    <pre><code>1. For each node v, set v.cost = inf and v.known = false
+            <ul>
+                <li>For single-source shortest paths in a weighted graph (Directed or undirected)</li>
+            </ul>
+
+            <pre><code>1. For each node v, set v.cost = inf and v.known = false
 2. Set source.cost = 0
 3. While there are unknown nodes in G  
     a) select unknown v with lowest cost
@@ -40,11 +46,11 @@
 Runtime: O(v^2 + E)
 </code></pre>
 
-    <ul>
-        <li>With priority queue </li>
-    </ul>
+            <ul>
+                <li>With priority queue </li>
+            </ul>
 
-    <pre><code>1. For each node v, set v.cost = inf and v.known = false, add v into Q
+            <pre><code>1. For each node v, set v.cost = inf and v.known = false, add v into Q
 2. set source.cost = 0
 3. while Q is not empty:
     p &lt;- extract_min()
@@ -55,18 +61,29 @@ Runtime: O(v^2 + E)
             Q.decrese_key(q)
 </code></pre>
 
-    <h3 id="runtime">Runtime</h3>
 
-    <p>|Implementation|Big O|
-        |---|---|
-        |Normal|V^2|
-        |Fib Heap|E+Vlog(V) (Fastest known single-source algorithm)|</p>
+            <h3 id="runtime">Runtime</h3>
+            <table>
+                <tr><td>Implementation</td><td>Big O</td></tr>
+                <tr>
+                    <td>Normal</td>
+                    <td>V^2</td>
+                </tr>
+                <tr>
+                    <td>Fib Heap</td>
+                    <td>E+Vlog(V) (Fastest known single-source algorithm)</td>
+                </tr>
+            </table>
+            
+        </div>
+        <div>
+            <h2 id="bellmanfordsalgorithm">Bellman-Ford's Algorithm</h2>
 
-    <h2 id="bellmanfordsalgorithm">Bellman-Ford's Algorithm</h2>
-
-    <ul>
-        <li>single source algorithm (works for negative weight)</li>
-    </ul>
+            <ul>
+                <li>single source algorithm (works for negative weight)</li>
+            </ul>
+        </div>
+    </div>
 </body>
 
 </html>

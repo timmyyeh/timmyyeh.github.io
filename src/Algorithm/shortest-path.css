@@ -1,0 +1,28 @@
+.content {
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+    column-gap: 50px;
+}
+
+.content > div:nth-child(even) {
+    background: rgb(218, 231, 247);
+}
+
+.content > div:hover {
+    box-shadow: 15px 10px 15px #ccc;
+    z-index: 1;
+}
+
+#singlesourceshortestpathalgorithm {
+    text-align: center;
+}
+
+.content > div {
+    border: 1px #ccc solid;
+    padding: 50px;
+}
+
+table {
+    border:1px #000 solid;
+}

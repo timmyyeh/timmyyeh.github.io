@@ -82,8 +82,46 @@ Disadvantages: unable to clock
 ## Bridge
 * A network bridge is a computer networking device that creates a single aggregate network from multiple communication networks or network segments.   
   ### learning bridge: each bridge inspect the source address in all frames and record it.
+* hard to scale and to handle heterogeneity
 
-  
+## Internetworking (IP)
+* a protocal that runs on all nodes (hosts and routers) in a collection of networks that allows these nodes and networks to function as a single logical internetwork
+
+* Bridges: Link-level nodes (forwarding frames from one link to another to implement an extended LAN)
+* Switches: Network-level nodes (forwarding packets from one link to another to implement packet switch network)
+* Routers: internet-level nodes (forwarding datagrams from one network to another to implement an internet)  
+  ### Hierarchical Addressing
+  * split addres into network and host parts so that router only contains network number instead of all nodes
+  ### Subneting and classless addressing: easy to scale
+* Address Translation (ARP)  
+  * Need to translate IP address to link-level address
+  * host first look its own ARP table, if not found, it will broadcast an arp query onto network (with the target ip address, and both link-layer and ip address of sending host) 
+* Dynamic Host Configuration Protocal (DHCP)  
+    * Client side and server side
+    * all ip configuration is in server side
+    * rent the ip to your client
+    * First time: broadcast DHCPDISCOVER to network with src 0.0.0.0 and dest 255.255.255.255 (DHCPDISCOVER contains MAC since it does not have IP yet)
+    * after server received this, it will send DHCOFFER 
+* Internnet Control Message Protocol (ICMP)  
+  * 偵測錯誤與回報機制
+  * 偵測遠端主機是否存在
+  * 建立及維護路由資料
+  * 重導資料傳送路徑
+  * 資料流量控制
+---
+---
+# Chapter 4
+* Routing Area: divide network into different area and uses backbone area to control all of them
+* area border routers (ABR): summarize the information in different area
+* Border Gateway Protocol (BGP): no assumptions about how autonomous systems are interconnected
+* Types of Autonomous systems:  
+  * Local traffic: originates at or terminates on nodes within an AS
+  * Transsit traffic: passes through an AS
+  * Stub AS: has only single conntection to one other AS (local traffic)
+  * Multihomed AS: connected to more than one other AS but no transit traffic
+  * Transit AS: backbone
+
+---
 ---
 # Class Note  
 * Centralize: use scheduler to pick who gets to transmit and when
