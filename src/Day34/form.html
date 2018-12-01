@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Form!!!</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        .content > div {
+            margin: 100px;
+            padding: 30px;
+            border: 3px gray solid;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="content">
+        <div>
+            <h1>Login Without Form</h1>
+            <input type="text">
+            <br>
+            <span>Color</span>
+            <input type="color">
+            <br />
+            <span>Date</span>
+            <input type="date">
+            <br />
+            <span>Button</span>
+            <input type="button">
+        </div>
+        <div>
+            <h1>Form with input</h1>
+            <form action="https://google.com" method="GET">
+                <input name="username" type="text" placeholder="username">
+                <input name="aa" type="password" placeholder="password">
+                <input type="submit">
+            </form>
+        </div>
+        <div>
+            <h1>Form with Label</h1>
+            <form action="" method="get">
+                <label for="dogs">Dogs</label>
+                <input name="pet" id="dogs" value="you choose dogsss" type="radio">
+                <label for="cats">Cats</label>
+                <input type="radio" name="pet" id="cats" value="you choose catsss">
+                <button>Submit</button>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>
