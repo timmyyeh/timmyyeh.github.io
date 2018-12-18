@@ -6,31 +6,32 @@
 	<link rel="stylesheet" type="text/css" href="index.css">
 	<link href="https://fonts.googleapis.com/css?family=Bellefair" rel="stylesheet">
 	<link rel="icon" type="text/css" href="src/img/paper.png">
-	<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
-	 crossorigin="anonymous"></script>
 	<script type="text/javascript" src="index.js"></script>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
 
 
 </head>
 
 <body>
-	<header>
-		<ul class="nav">
-			<li><a href="./index.html">Home</a></li>
-			<li><a href="mailto: timmyyeh@cs.washington.edu">Contact</a></li>
-			<li><a href="./src/Network/network.html">Network</a></li>
-			<div class="dropdown">
-				<button class="dropbtn">Algorithm</button>
-				<div class="dropdown-content">
-					<a href="./src/Algorithm/shortest-path.html">Shortest Path</a>
-				</div>
-			</div>
-			<li style="float:right;"><a href="#about">About</a></li>
+	<nav class="navbar navbar-expand-lg navbar-light bg-light">
+		<ul class="navbar-nav mr-auto">
+			<a class="navbar-brand" href="./index.html">Home</a>
+			<li class="nav-item"><a class="nav-link" href="mailto: timmyyeh@cs.washington.edu">Contact</a></li>
+			<li class="nav-item"><a class="nav-link" href="./src/Network/network.html">Network</a></li>
+			<li class="nav-item"><a class="nav-link" href="./src/Algorithm/shortest-path.html">Algorithm</a></li>
 		</ul>
-	</header>
+		<a class="nav-link text-secondary" href="#about">About</a>
+	</nav>
 	<p id="first_body">Learning How To Code In 180 Days!</p>
 
-	<div id="main">
+	<div class="container">
 		<p class="days">Day39<a href="src/Day39/grid.html" class="link">Grid</a></p>
 		<p class="days">Day38<a href="src/Day38/bootstrap.html" class="link">Bootstrap!!</a></p>
 		<p class="days">Day37<a href="src/Day37/blog.html" class="link">Blog</a></p>
