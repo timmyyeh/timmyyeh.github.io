@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+    <title>Document</title>
+</head>
+<style>
+    .container {
+        font-size: 40px;
+    }
+</style>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <i style="color:white;" class="far fa-images"></i>
+        <a class="navbar-brand" href="#">Game</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>˘
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="../../index.html">Home <span class="sr-only">(current)</span></a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container">
+        <span class="score" id="player1">0</span><span class="score">:</span><span class="score" id="player2">0</span>
+        <div>Playing to <span id="numberOfGames">5</span></div>
+        <div>
+            <input type="number">
+            <button class="btn btn-outline-secondary" id="player1_btn">Player One</button>
+            <button class="btn btn-outline-secondary" id="player2_btn">Player Two</button>
+            <button class="btn btn-outline-secondary" id="reset">Reset</button>
+        </div>
+        
+    </div>
+
+    <script>
+        const player1 = document.querySelector('#player1_btn');
+        const player2 = document.querySelector('#player2_btn');
+        const player1_text = document.querySelector('#player1');
+        const player2_text = document.querySelector('#player2');
+        const winningScore = document.querySelector('input');
+        const games = document.querySelector('#numberOfGames');
+        const reset = document.querySelector('#reset');
+
+        let isPlaying = true;
+        let player1_score = 0;
+        let player2_score = 0;
+        let numberOfGame = 5;
+
+        player1.addEventListener('click',() => {
+            console.log("player1");
+            if (isPlaying) {
+                if (player1_score < numberOfGame && player2_score < numberOfGame) {
+                    player1_score += 1;
+                    player1_text.textContent = player1_score;
+                }
+            }
+
+        });
+
+        player2.addEventListener('click', () => {
+            console.log('player2');
+            if (isPlaying) {
+                if (player1_score < numberOfGame && player2_score < numberOfGame) {
+                    player2_score += 1;
+                    player2_text.textContent = player2_score;
+                }
+            }
+        });
+        winningScore.addEventListener('change', ()=>{
+            games.textContent = winningScore.value;
+            numberOfGame = winningScore.value;
+        });
+
+        reset.addEventListener('click', () => {
+            player1_score = 0;
+            player2_score = 0;
+            player1_text.textContent = player1_score;
+            player2_text.textContent = player2_score;
+        });
+
+    </script>
+</body>
+
+</html>
