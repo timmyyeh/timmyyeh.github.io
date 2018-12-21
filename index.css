@@ -36,10 +36,9 @@ body{
 	font-size: 5em;
 	text-align: center;
 	color: rgb(255, 255, 255);
-	background: url(./src/img/about.jpg);
+	background: url('./src/img/about.jpg');
 	background-repeat: no-repeat;
 	background-size: cover;
 	height: 360px;
-	  
 }
 
