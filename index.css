@@ -2,6 +2,7 @@
 body{
 	font-family: 'Bellefair', serif;
 	width: 100%;
+	padding-top: 56px;
 }
 
 #first_body {
@@ -31,19 +32,14 @@ body{
 }
 
 .content {
-	/* margin-top: 5%; */
 	font-weight: 700;
 	font-size: 5em;
-	padding-top: 10%;
 	text-align: center;
 	color: rgb(255, 255, 255);
-}
-
-#introduction {
 	background: url(./src/img/about.jpg);
+	background-repeat: no-repeat;
 	background-size: cover;
-	height: 900px;
-	margin-top: 3%;
+	height: 360px;
+	  
 }
-
 
