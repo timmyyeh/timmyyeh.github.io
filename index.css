@@ -36,10 +36,7 @@ body{
 	font-size: 5em;
 	text-align: center;
 	color: rgb(255, 255, 255);
-	background: url('./src/img/about.jpg');
-	background-position: center;
-	background-repeat: no-repeat;
-	background-size: 100% 100%;
+	background: url('./src/img/about.jpg') center center / cover;
 	height: 360px;
 }
 
