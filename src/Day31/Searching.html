@@ -94,52 +94,30 @@
     <script>
 
         const endpoint = 'https://gist.githubusercontent.com/Miserlou/c5cd8364bf9b2420bb29/raw/2bf258763cdddd704f8ffd3ea9a3e81d25e2c6f6/cities.json';
-        const city = getData();
-
-        function findMatches(wordToMatch, city){
-            return city.filter(place => {
-                const regex = new RegExp(wordToMatch, 'gi');
-                return place.city.match(regex) || place.state.match(regex);
+        let cities = [];
+        fetch(endpoint)
+            .then(data => data.json())
+            .then(data => {
+                cities = data
+                console.log(cities);
             });
-
-        }
-
-        function getData() {
-            var cities = [];
-            $.ajax({
-                url: endpoint,
-                type: 'GET',
-                async: false,
-                success: function (e) {
-                    var a = JSON.parse(e);
-                    cities = a;
-                }
+        function find(cities, target) {
+            return cities.filter(place => {
+                const regex = new RegExp(target, 'gi');
+                return place.city.match(regex);
             });
-            return cities;
         }
-
-        function displayMatch(){
-            const matchArray = findMatches(this.value, city);
-            const html = matchArray.map(place => {
-                const regex = new RegExp(this.value, 'gi');
-                const cityName = place.city.replace(regex, `<span class="hl">${this.value}</span>`)
-                return `
-                <li>
-                <span class="name">${cityName}, ${place.state}</span>
-                <span class="population">${place.population}</span>
-                </li>
-                `;
-            }).join('');
+        function display() {
+            const matches = find(cities, this.value);
+            const html = matches.map(match => {
+                return `<li>${match.city}</li>`
+            });
             suggestions.innerHTML = html;
         }
-        const searchInput = document.querySelector('.search');
+
+        const search = document.querySelector('.search');
         const suggestions = document.querySelector('.suggestions');
-
-        searchInput.addEventListener('change', displayMatch);
-        searchInput.addEventListener('keyup', displayMatch);
-
-
-
+        search.addEventListener('keyup', display);
 
 
     </script>
